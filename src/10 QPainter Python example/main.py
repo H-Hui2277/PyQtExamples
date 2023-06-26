@@ -1,7 +1,7 @@
-from PyQt6.QtWidgets import *
-from PyQt6.QtGui import *
-from PyQt6.QtCore import *
-from PyQt6.QtMultimedia import QSound
+from PySide6.QtWidgets import *
+from PySide6.QtGui import *
+from PySide6.QtCore import *
+from PySide6.QtMultimedia import QMediaPlayer
 
 class PlainTextEdit(QPlainTextEdit):
     def __init__(self):
@@ -14,7 +14,7 @@ class PlainTextEdit(QPlainTextEdit):
         self._holes.append(e.pos())
         super().mousePressEvent(e)
         self.viewport().update()
-        QSound.play("shot.wav")
+        QMediaPlayer.play("shot.wav")
     def paintEvent(self, e):
         super().paintEvent(e)
         painter = QPainter(self.viewport())

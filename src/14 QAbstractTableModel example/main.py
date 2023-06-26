@@ -1,5 +1,5 @@
-from PyQt6.QtWidgets import *
-from PyQt6.QtCore import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
 
 headers = ["Scientist name", "Birthdate", "Contribution"]
 rows = [("Newton", "1643-01-04", "Classical mechanics"),
@@ -13,11 +13,11 @@ class TableModel(QAbstractTableModel):
         return len(headers)
     def data(self, index, role):
         if role != Qt.ItemDataRole.DisplayRole:
-            return QVariant()
+            return QVariantAnimation()
         return rows[index.row()][index.column()]
     def headerData(self, section, orientation, role):
         if role != Qt.ItemDataRole.DisplayRole or orientation != Qt.Orientation.Horizontal:
-            return QVariant()
+            return QVariantAnimation()
         return headers[section]
 
 app = QApplication([])

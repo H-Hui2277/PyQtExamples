@@ -1,5 +1,5 @@
-from PyQt6.QtWidgets import *
-from PyQt6.QtCore import QStringListModel
+from PySide6.QtWidgets import *
+from PySide6.QtCore import QStringListModel
 
 app = QApplication([])
 model = QStringListModel([
